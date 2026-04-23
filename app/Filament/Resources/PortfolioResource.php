@@ -33,7 +33,10 @@ class PortfolioResource extends Resource
             Forms\Components\Textarea::make('deskripsi'),
             Forms\Components\FileUpload::make('foto')
                 ->image()
+                ->disk('public')
                 ->directory('portfolio')
+                ->visibility('public')
+                ->maxSize(5120)
                 ->required(),
             Forms\Components\Toggle::make('is_active')
                 ->default(true),
