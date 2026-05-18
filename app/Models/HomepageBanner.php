@@ -4,20 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Portfolio extends Model
+class HomepageBanner extends Model
 {
     protected $fillable = [
         'title',
-        'slug',
-        'thumbnail',
-        'description',
-        'location',
-        'images',
+        'subtitle',
+        'image',
+        'button_text',
+        'button_link',
         'is_active',
+        'order',
     ];
 
     protected $casts = [
-        'images' => 'array',
         'is_active' => 'boolean',
     ];
 }

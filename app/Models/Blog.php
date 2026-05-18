@@ -4,20 +4,25 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Portfolio extends Model
+class Blog extends Model
 {
     protected $fillable = [
+        'category_id',
         'title',
         'slug',
         'thumbnail',
-        'description',
-        'location',
-        'images',
+        'content',
+        'meta_title',
+        'meta_description',
         'is_active',
     ];
 
     protected $casts = [
-        'images' => 'array',
         'is_active' => 'boolean',
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }
